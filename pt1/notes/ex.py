@@ -127,18 +127,63 @@
 # print(str(ans) + ' is close to the cube root of ' + str(x))
 # print(str(ans**3))
 
-num = 102
-if num < 0:
-    isNeg = True
-    num = abs(num)
-else:
-    isNeg = False
-result = ''
-if num == 0:
-    result = '0'
-while num > 0:
-    result = str(num%2) + result
-    num = num//2
-if isNeg:
-    result = '-' + result
-print(result)
+# num = 102
+# if num < 0:
+#     isNeg = True
+#     num = abs(num)
+# else:
+#     isNeg = False
+# result = ''
+# if num == 0:
+#     result = '0'
+# while num > 0:
+#     result = str(num%2) + result
+#     num = num//2
+# if isNeg:
+#     result = '-' + result
+# print(result)
+
+
+
+# # Initialize variables
+# x = float(input('Enter a decimal number greater than 0: '))
+# p = 0
+
+# # Multiply by a power of 2 big enough to convert to a whole number
+# while ((2**p)*x)%1 != 0:
+#     p += 1
+#     print('Remainder = ' + str((2**p)*x - int((2**p)*x)) + ', Exponent = ' + str(p))
+
+# # Capture the whole number as a variable
+# num = int((2**p)*x)
+
+# # Convert the whole number to binary representation
+# result = ''
+# if num == 0:
+#     result = '0'
+# while num > 0:
+#     result = str(num%2) + result
+#     num = num//2
+
+# # Shift the binary representation right to transform to the correct binary decimal
+# for i in range(p - len(result)):
+#     result = '0' + result
+
+# # Place the decimal point
+# if (x-1.0) < 1E-10:
+#     result = '1'
+# else:
+#     result = result[0:-p] + '.' + result[-p:]
+# print('The binary representation of the decimal ' + str(x) + ' is ' + str(result))
+
+epsilon = 1E-3
+y = 24.0
+guess = y/2.0
+numGuesses = 0
+
+while abs(guess*guess - y) >= epsilon:
+    numGuesses += 1
+    guess = guess - (((guess**2) - y)/(2*guess))
+
+print('Number of guesses = ' + str(numGuesses))
+print('Square root of ' + str(y) + ' is about ' + str(guess))
