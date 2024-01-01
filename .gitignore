@@ -1,2 +1,8 @@
-# Virtual environments
+# Virtual environment
 .venv/
+
+# VSCode settings
+.vscode/
+
+# Pesky Mac OS files
+.DS_Store
