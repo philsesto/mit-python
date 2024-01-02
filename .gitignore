@@ -6,3 +6,6 @@
 
 # Pesky Mac OS files
 .DS_Store
+
+# Sandbox testing file
+pt1/notes/ex.py
